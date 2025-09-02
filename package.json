@@ -6,7 +6,7 @@
 "scripts": {
   "start": "node index.js",
   "test": "node test.js",
-  "build": "echo 'Build successful'"
+  "build": "echo 'Build step passed'"
 },
   "keywords": [],
   "author": "",
