@@ -1,4 +1,4 @@
-name: CI Demo
+name: CI/CD Demo
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-  build-and-test:
+  build-test-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,3 +24,9 @@ jobs:
 
       - name: Run tests
         run: npm test
+
+      - name: Build app
+        run: npm run build
+
+      - name: Deploy to Vercel
+        run: npx vercel --prod --token=${{ secrets.VERCEL_TOKEN }} --yes
